@@ -1,0 +1,30 @@
+.card-container {
+  background-color: bisque;
+  margin: 0 15px;
+  overflow: hidden;
+
+  .flag-img-container {
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .wrapper {
+    padding: 25px;
+
+    h2 {
+      font-size: 2.75rem;
+    }
+    .info-container {
+      p {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+}
