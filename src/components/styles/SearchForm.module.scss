@@ -14,6 +14,7 @@
   @include mediaQuery.responsive(tablet) {
     flex-direction: row;
     justify-content: space-between;
+    gap: 0;
   }
 
   .searchbar-container {

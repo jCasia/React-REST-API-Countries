@@ -4,7 +4,7 @@
 .header {
   background-color: var(--light-mode-bg);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   padding: 30px 20px;
 
   display: flex;
@@ -15,12 +15,19 @@
     padding: 30px;
   }
 
+  @include mediaQuery.responsive(small-laptop) {
+    padding: 30px 60px;
+  }
+
   h1 {
     font-size: 1.75rem;
     color: var(--light-mode-text);
 
     @include mediaQuery.responsive(large-mobile) {
       font-size: 2.5rem;
+    }
+    @include mediaQuery.responsive(small-laptop) {
+      font-size: 3rem;
     }
   }
 

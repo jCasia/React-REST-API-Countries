@@ -8,6 +8,14 @@
 
   @include container.container;
 
+  @include mediaQuery.responsive(tablet) {
+    gap: 50px;
+  }
+
+  @include mediaQuery.responsive(large-laptop) {
+    padding: 0 30px;
+  }
+
   .cards-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -17,6 +25,16 @@
       grid-template-columns: repeat(2, 1fr);
       row-gap: 30px;
       column-gap: 0;
+    }
+
+    @include mediaQuery.responsive(small-laptop) {
+      grid-template-columns: repeat((3, 1fr));
+      row-gap: 60px;
+    }
+
+    @include mediaQuery.responsive(large-laptop) {
+      grid-template-columns: repeat((4, 1fr));
+      row-gap: 80px;
     }
   }
 }
