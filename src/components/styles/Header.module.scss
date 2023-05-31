@@ -1,0 +1,43 @@
+@use '../../styles/settings/container' as container;
+@use '../../styles/settings/media' as mediaQuery;
+
+.header {
+  background-color: var(--light-mode-bg);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 30px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include mediaQuery.responsive(large-mobile) {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    color: var(--light-mode-text);
+
+    @include mediaQuery.responsive(large-mobile) {
+      font-size: 2.5rem;
+    }
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--light-mode-text);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    @include mediaQuery.responsive(large-mobile) {
+      font-size: 1.7rem;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use '../../styles/settings/container' as container;
+@use '../../styles/settings/media' as mediaQuery;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include container.container;
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @include mediaQuery.responsive(small-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+      column-gap: 0;
+    }
+  }
+}

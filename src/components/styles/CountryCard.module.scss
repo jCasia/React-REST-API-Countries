@@ -1,7 +1,15 @@
+@use '../../styles/settings/media' as mediaQuery;
+
 .card-container {
-  background-color: bisque;
-  margin: 0 15px;
+  background-color: var(--colour-very-light-grey);
+  border-radius: 7.5px;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 30px;
   overflow: hidden;
+
+  @include mediaQuery.responsive(small-tablet) {
+    margin: 0 20px;
+  }
 
   .flag-img-container {
     img {
@@ -11,14 +19,43 @@
   }
 
   .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     padding: 25px;
 
-    h2 {
-      font-size: 2.75rem;
+    @include mediaQuery.responsive(large-mobile) {
+      padding: 35px;
     }
+
+    h2 {
+      font-size: 2rem;
+
+      @include mediaQuery.responsive(medium-mobile) {
+        font-size: 2.25rem;
+      }
+
+      @include mediaQuery.responsive(large-mobile) {
+        font-size: 2.75rem;
+      }
+      @include mediaQuery.responsive(small-tablet) {
+        font-size: 2.25rem;
+      }
+    }
+
     .info-container {
+      font-size: 1.4rem;
+      @include mediaQuery.responsive(medium-mobile) {
+        font-size: 1.6rem;
+      }
+      @include mediaQuery.responsive(large-mobile) {
+        font-size: 1.8rem;
+      }
+
+      @include mediaQuery.responsive(small-tablet) {
+        font-size: 1.5rem;
+      }
       p {
-        font-size: 2rem;
         font-weight: 600;
       }
 

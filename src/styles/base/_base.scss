@@ -3,6 +3,7 @@
 *::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -11,4 +12,18 @@ html {
 
 body {
   font-family: var(--font-nunito);
+}
+
+//triger
+.dark-theme {
+  --light-mode-text: var(--colour-white);
+  --light-mode-bg: var(--dark-mode-bg);
+
+  transition: all 0.4s;
+}
+
+.light-theme {
+  color: var(--light-mode-text);
+  background-color: var(--light-mode-bg);
+  transition: all 0.4s;
 }

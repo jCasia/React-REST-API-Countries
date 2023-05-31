@@ -1,9 +1,11 @@
 :root {
-  --colour-dark-blue: rgb(43, 57, 69);
-  --colour-very-dark-blue: rgb(32, 44, 55);
-  --colour-very-dark-blue-2: rgb(17, 21, 23);
-  --colour-dark-grey: rgb(133, 133, 133);
-  --colour-very-light-grey: rgb(250, 250, 250);
+  --dark-mode-elem: rgb(43, 57, 69);
+  --dark-mode-bg: rgb(32, 44, 55);
+
+  --light-mode-text: rgb(17, 21, 23);
+  --light-mode-input: rgb(133, 133, 133);
+  --light-mode-bg: rgb(250, 250, 250);
+
   --colour-white: rgb(255, 255, 255);
 }
 

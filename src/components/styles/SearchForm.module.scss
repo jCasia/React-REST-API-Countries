@@ -1,0 +1,63 @@
+@use '../../styles/settings/media' as mediaQuery;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  gap: 40px;
+
+  @include mediaQuery.responsive(small-tablet) {
+    align-items: center;
+    gap: 25px;
+  }
+
+  @include mediaQuery.responsive(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .searchbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 25px;
+    font-size: 1.75rem;
+    box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    @include mediaQuery.responsive(small-tablet) {
+      width: 60%;
+      font-size: 2rem;
+    }
+    @include mediaQuery.responsive(tablet) {
+      width: 45%;
+    }
+
+    input {
+      border: none;
+      font-family: inherit;
+      width: 100%;
+      font-size: 1.4rem;
+      outline: none;
+
+      @include mediaQuery.responsive(large-mobile) {
+        font-size: 1.6rem;
+      }
+
+      // &::placeholder {
+      //   // color:
+      // }
+    }
+  }
+
+  .dropdown-container {
+    select {
+      border: none;
+      padding: 15px;
+      box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.1);
+      font-family: inherit;
+      border-radius: 5px;
+    }
+  }
+}
