@@ -2,3 +2,8 @@
   max-width: 1440px;
   margin: 0 auto;
 }
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}

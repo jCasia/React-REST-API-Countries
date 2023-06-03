@@ -1,5 +1,7 @@
 import { useState, createContext, useContext, useEffect } from 'react';
 
+const url = 'https://restcountries.com/v3.1/all';
+
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {

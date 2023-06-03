@@ -1,38 +1,38 @@
 @mixin responsive($breakpoint) {
-  @if $breakpoint == medium-mobile {
+  @if $breakpoint == large-mobile {
     @media only screen and (min-width: 23.4em) {
       @content;
     }
   }
-  @if $breakpoint == large-mobile {
+  @if $breakpoint == small-tablet {
     @media only screen and (min-width: 31.25em) {
       @content;
     }
   }
-  @if $breakpoint == small-tablet {
+  @if $breakpoint == large-tablet {
     @media only screen and (min-width: 35em) {
       @content;
     }
   }
-  @if $breakpoint == tablet {
+  @if $breakpoint == small-laptop {
     @media only screen and (min-width: 51em) {
       @content;
     }
   }
 
-  @if $breakpoint == small-laptop {
+  @if $breakpoint == laptop {
     @media only screen and (min-width: 61.5em) {
       @content;
     }
   }
-
-  // @if $breakpoint == laptop {
-  //   @media only screen and (min-width: 61.5em) {
-  //     @content;
-  //   }
-  // }
-
   @if $breakpoint == large-laptop {
+    //large-laptop
+    @media only screen and (min-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    //desktop
     @media only screen and (min-width: 87.5em) {
       @content;
     }

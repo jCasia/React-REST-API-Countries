@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding: 50px 30px;
 
   @include container.container;
 
@@ -12,8 +13,8 @@
     gap: 50px;
   }
 
-  @include mediaQuery.responsive(large-laptop) {
-    padding: 0 30px;
+  @include mediaQuery.responsive(desktop) {
+    padding: 50px;
   }
 
   .cards-container {
@@ -21,20 +22,18 @@
     grid-template-columns: 1fr;
     gap: 40px;
 
-    @include mediaQuery.responsive(small-tablet) {
+    @include mediaQuery.responsive(large-tablet) {
       grid-template-columns: repeat(2, 1fr);
-      row-gap: 30px;
-      column-gap: 0;
     }
 
-    @include mediaQuery.responsive(small-laptop) {
+    @include mediaQuery.responsive(laptop) {
       grid-template-columns: repeat((3, 1fr));
-      row-gap: 60px;
+      gap: 60px;
     }
 
-    @include mediaQuery.responsive(large-laptop) {
+    @include mediaQuery.responsive(desktop) {
       grid-template-columns: repeat((4, 1fr));
-      row-gap: 80px;
+      gap: 80px;
     }
   }
 }

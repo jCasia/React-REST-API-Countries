@@ -4,18 +4,17 @@
 .header {
   background-color: var(--light-mode-bg);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 50px;
   padding: 30px 20px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  @include mediaQuery.responsive(large-mobile) {
+  @include mediaQuery.responsive(small-tablet) {
     padding: 30px;
   }
 
-  @include mediaQuery.responsive(small-laptop) {
+  @include mediaQuery.responsive(laptop) {
     padding: 30px 60px;
   }
 
@@ -23,10 +22,10 @@
     font-size: 1.75rem;
     color: var(--light-mode-text);
 
-    @include mediaQuery.responsive(large-mobile) {
+    @include mediaQuery.responsive(small-tablet) {
       font-size: 2.5rem;
     }
-    @include mediaQuery.responsive(small-laptop) {
+    @include mediaQuery.responsive(laptop) {
       font-size: 3rem;
     }
   }
@@ -43,7 +42,7 @@
     align-items: center;
     gap: 6px;
 
-    @include mediaQuery.responsive(large-mobile) {
+    @include mediaQuery.responsive(small-tablet) {
       font-size: 1.7rem;
     }
   }

@@ -1,15 +1,18 @@
-import axios from 'axios';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Home from './Home';
 import Header from '../components/Header';
-
-const url = 'https://restcountries.com/v3.1/all';
+import Details from './Details';
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Home />
-    </>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='details' element={<Details />} />
+      </Routes>
+    </Router>
   );
 }
 export default App;
