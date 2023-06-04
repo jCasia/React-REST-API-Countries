@@ -5,8 +5,9 @@ const url = 'https://restcountries.com/v3.1/all';
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
+  //DarkTheme
   const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [countryName, setCountryName] = useState('');
+  const [selected, setSelected] = useState('');
 
   const darkThemeToggle = () => {
     setIsDarkTheme(!isDarkTheme);
@@ -17,9 +18,9 @@ export const AppProvider = ({ children }) => {
       value={{
         isDarkTheme,
         setIsDarkTheme,
-        countryName,
-        setCountryName,
         darkThemeToggle,
+        selected,
+        setSelected,
       }}
     >
       {children}

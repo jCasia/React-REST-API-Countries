@@ -19,11 +19,10 @@
   .searchbar-container {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 15px;
     padding: 15px 25px;
     font-size: 1.75rem;
-    box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 
     @include mediaQuery.responsive(large-tablet) {
@@ -44,16 +43,6 @@
       @include mediaQuery.responsive(small-tablet) {
         font-size: 1.6rem;
       }
-    }
-  }
-
-  .dropdown-container {
-    select {
-      border: none;
-      padding: 15px;
-      box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.1);
-      font-family: inherit;
-      border-radius: 5px;
     }
   }
 }

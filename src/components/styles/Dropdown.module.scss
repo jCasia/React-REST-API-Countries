@@ -1,0 +1,68 @@
+@use '../../styles/settings/media' as mediaQuery;
+
+.dropdown {
+  position: relative;
+  align-self: flex-start;
+
+  @include mediaQuery.responsive(large-tablet) {
+    align-self: center;
+  }
+
+  button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    border: none;
+    background-color: transparent;
+    padding: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.1);
+    width: 180px;
+
+    .arrow {
+      font-size: 1.4rem;
+      transition: all 0.5s;
+
+      &.active {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7.5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: white;
+    width: 100%;
+
+    position: absolute;
+    top: 52px;
+    z-index: 99;
+
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+
+    &.expand {
+      max-height: 145px;
+      padding: 15px;
+      z-index: 100;
+      transform-origin: top;
+    }
+
+    li {
+      list-style: none;
+      cursor: pointer;
+      transition: all 0.4s;
+      font-size: 1.25rem;
+    }
+  }
+}
