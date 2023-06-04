@@ -24,6 +24,8 @@
     font-size: 1.75rem;
     box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    color: var(--light-mode-text);
+    background-color: var(--light-mode-elem);
 
     @include mediaQuery.responsive(large-tablet) {
       width: 60%;
@@ -39,6 +41,8 @@
       width: 100%;
       font-size: 1.4rem;
       outline: none;
+      color: var(--light-mode-text);
+      background-color: var(--light-mode-elem);
 
       @include mediaQuery.responsive(small-tablet) {
         font-size: 1.6rem;

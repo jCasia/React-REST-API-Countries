@@ -5,7 +5,7 @@
   color: var(--light-mode-text);
 
   .card-container {
-    background-color: var(--colour-very-light-grey);
+    background-color: var(--light-mode-elem);
     border-radius: 7.5px;
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -59,7 +59,7 @@
         }
 
         span {
-          font-weight: 400;
+          font-weight: 300;
         }
       }
     }

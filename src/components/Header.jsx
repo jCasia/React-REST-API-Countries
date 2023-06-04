@@ -3,7 +3,7 @@ import styles from './styles/Header.module.scss';
 import { useGlobalContext } from '../context';
 
 const Header = () => {
-  const { darkThemeToggle, isDarkTheme } = useGlobalContext();
+  const { darkThemeToggle, darkTheme } = useGlobalContext();
 
   return (
     <header className={styles.header}>
@@ -13,8 +13,8 @@ const Header = () => {
         type='button'
         onClick={darkThemeToggle}
       >
-        {isDarkTheme ? <BsSun /> : <BsMoon />}
-        <p>{isDarkTheme ? 'Light Mode' : 'Dark Mode'}</p>
+        {darkTheme ? <BsSun /> : <BsMoon />}
+        <p>{darkTheme ? 'Light Mode' : 'Dark Mode'}</p>
       </button>
     </header>
   );

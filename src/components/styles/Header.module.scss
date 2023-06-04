@@ -2,9 +2,10 @@
 @use '../../styles/settings/media' as mediaQuery;
 
 .header {
-  background-color: var(--light-mode-bg);
+  background-color: var(--light-mode-elem);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   padding: 30px 20px;
+  position: relative;
 
   display: flex;
   align-items: center;

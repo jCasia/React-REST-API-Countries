@@ -13,9 +13,9 @@
     justify-content: space-between;
     align-items: center;
     gap: 25px;
-
+    color: var(--light-mode-text);
     border: none;
-    background-color: transparent;
+    background-color: var(--light-mode-elem);
     padding: 15px;
     font-family: inherit;
     cursor: pointer;
@@ -39,7 +39,8 @@
     gap: 7.5px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--light-mode-elem);
+    color: var(--light-mode-text);
     width: 100%;
 
     position: absolute;
@@ -55,13 +56,11 @@
       max-height: 145px;
       padding: 15px;
       z-index: 100;
-      transform-origin: top;
     }
 
     li {
       list-style: none;
       cursor: pointer;
-      transition: all 0.4s;
       font-size: 1.25rem;
     }
   }

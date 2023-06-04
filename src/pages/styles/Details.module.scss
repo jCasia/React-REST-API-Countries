@@ -29,6 +29,7 @@
     border-radius: 7.5px;
     text-decoration: none;
     color: var(--light-mode-text);
+    background-color: var(--light-mode-elem);
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 
     display: flex;
@@ -77,6 +78,7 @@
     .details-wrapper {
       @include container.flex-column;
       gap: 20px;
+      color: var(--light-mode-text);
 
       @include mediaQuery.responsive(laptop) {
         display: grid;
@@ -119,7 +121,7 @@
       }
 
       span {
-        font-weight: 400;
+        font-weight: 300;
       }
     }
 
