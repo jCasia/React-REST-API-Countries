@@ -46,7 +46,6 @@
     }
 
     @include mediaQuery.responsive(small-laptop) {
-      font-size: 2rem;
       padding: 7.5px 35px;
     }
   }
