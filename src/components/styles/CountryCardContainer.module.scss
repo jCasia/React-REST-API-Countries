@@ -1,0 +1,27 @@
+@use '../../styles/settings/container' as container;
+@use '../../styles/settings/media' as mediaQuery;
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+
+  @include mediaQuery.responsive(large-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mediaQuery.responsive(laptop) {
+    grid-template-columns: repeat((3, 1fr));
+    gap: 60px;
+  }
+
+  @include mediaQuery.responsive(desktop) {
+    grid-template-columns: repeat((4, 1fr));
+    gap: 80px;
+  }
+}
+
+.wrapper {
+  text-align: center;
+  font-size: 3rem;
+}

@@ -1,13 +1,11 @@
 import { useState, createContext, useContext, useEffect } from 'react';
 
-const url = 'https://restcountries.com/v3.1/all';
-
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  //DarkTheme
   const [darkTheme, setDarkTheme] = useState(false);
   const [selected, setSelected] = useState('');
+  const [searchTerm, setSearchTerm] = useState('b');
 
   const darkThemeToggle = () => {
     setDarkTheme(!darkTheme);
@@ -22,6 +20,8 @@ export const AppProvider = ({ children }) => {
         darkThemeToggle,
         selected,
         setSelected,
+        searchTerm,
+        setSearchTerm,
       }}
     >
       {children}

@@ -3,7 +3,7 @@ import styles from './styles/Dropdown.module.scss';
 import { FiChevronDown } from 'react-icons/fi';
 import { useGlobalContext } from '../context';
 
-const options = ['Africa', 'America', 'Asia', 'Europe', 'Oceana'];
+const options = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
 const Dropdown = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -11,14 +11,13 @@ const Dropdown = () => {
 
   const selectHandler = (e) => {
     setSelected(e.target.textContent);
-    console.log(e.target.textContent);
     setIsDropdownOpen(false);
   };
 
   return (
     <div className={styles.dropdown}>
-      <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-        {selected}
+      <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} type='submit'>
+        {selected === '' ? 'Filter by Region' : `${selected}`}
         <FiChevronDown
           className={
             isDropdownOpen ? `${styles.arrow} ${styles.active}` : styles.arrow

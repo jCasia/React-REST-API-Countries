@@ -1,18 +1,28 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './Home';
-import Header from '../components/Header';
 import Details from './Details';
+import HomeLayout from './HomeLayout';
+import Error from './Error';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomeLayout />, //shared layout
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: 'details',
+        element: <Details />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='details' element={<Details />} />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 export default App;

@@ -10,11 +10,19 @@
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 
-    .flag-img-container {
-      img {
-        max-width: 100%;
-        object-fit: cover;
-      }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.4s;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .wrapper {
@@ -24,7 +32,7 @@
       padding: 25px;
 
       @include mediaQuery.responsive(small-tablet) {
-        padding: 35px;
+        padding: 25px;
       }
 
       h2 {
@@ -38,12 +46,17 @@
           font-size: 2.75rem;
         }
         @include mediaQuery.responsive(large-tablet) {
-          font-size: 2.25rem;
+          font-size: 1.8rem;
+        }
+        @include mediaQuery.responsive(large-laptop) {
+          font-size: 1.7rem;
         }
       }
 
       .info-container {
         font-size: 1.4rem;
+        line-height: 1.6;
+
         @include mediaQuery.responsive(large-mobile) {
           font-size: 1.6rem;
         }
@@ -53,6 +66,10 @@
 
         @include mediaQuery.responsive(large-tablet) {
           font-size: 1.5rem;
+        }
+
+        @include mediaQuery.responsive(large-laptop) {
+          font-size: 1.4rem;
         }
         p {
           font-weight: 600;

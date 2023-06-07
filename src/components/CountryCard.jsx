@@ -2,24 +2,35 @@ import { Link } from 'react-router-dom';
 import styles from './styles/CountryCard.module.scss';
 import dummyImg from '../assets/soon-img.png';
 
-const CountryCard = ({ flagImg, country, population, region, capital }) => {
+const CountryCard = ({ country }) => {
+  const {
+    name: { common: countryName },
+    flags: { svg: countryImg, alt },
+    population,
+    region,
+    capital,
+  } = country;
+
+  const populationFixed = population.toLocaleString('en', {
+    useGrouping: true,
+  });
+
   return (
     <Link to='/details' className={styles.cards}>
       <div className={styles['card-container']}>
-        <div className={styles['flag-img-container']}>
-          <img src={dummyImg} alt='dummy img' />
-        </div>
+        <img src={countryImg} alt={alt} />
+
         <div className={styles.wrapper}>
-          <h2>Brazil</h2>
+          <h2>{countryName}</h2>
           <div className={styles['info-container']}>
             <p>
-              Population: <span>206,135,893</span>
+              Population: <span>{populationFixed}</span>
             </p>
             <p>
-              Region: <span>Americas</span>
+              Region: <span>{region}</span>
             </p>
             <p>
-              Capital: <span>Brasilia</span>
+              Capital: <span>{capital}</span>
             </p>
           </div>
         </div>
@@ -29,5 +40,3 @@ const CountryCard = ({ flagImg, country, population, region, capital }) => {
 };
 
 export default CountryCard;
-
-// 530px 670px
