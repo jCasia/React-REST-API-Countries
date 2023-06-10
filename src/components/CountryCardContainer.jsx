@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useGlobalContext } from '../context';
 import { useEffect } from 'react';
+import LoadSpinner from './LoadSpinner';
 
 const url = 'https://restcountries.com/v3.1/name/';
 
@@ -33,7 +34,7 @@ const CountryCardContainer = () => {
   if (isLoading) {
     return (
       <section className={styles.wrapper}>
-        <h1>Loading....</h1>
+        <LoadSpinner />
       </section>
     );
   }

@@ -4,6 +4,7 @@ import BorderCountry from '../components/BorderCountry';
 import { BsArrowLeft } from 'react-icons/bs';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import LoadSpinner from '../components/LoadSpinner';
 
 const url = 'https://restcountries.com/v3.1/name/';
 
@@ -28,7 +29,7 @@ const Details = () => {
   if (isLoading) {
     return (
       <section className={styles.wrapper}>
-        <h1>Loading....</h1>
+        <LoadSpinner />
       </section>
     );
   }

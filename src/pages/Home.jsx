@@ -1,4 +1,5 @@
 import CountryCardContainer from '../components/CountryCardContainer';
+import ScrollTopButton from '../components/ScrollTopButton';
 import SearchForm from '../components/SearchForm';
 import styles from './styles/Home.module.scss';
 
@@ -7,6 +8,7 @@ const Home = () => {
     <main className={styles.main}>
       <SearchForm />
       <CountryCardContainer />
+      <ScrollTopButton />
     </main>
   );
 };

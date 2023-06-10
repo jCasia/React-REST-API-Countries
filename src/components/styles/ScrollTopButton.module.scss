@@ -1,0 +1,45 @@
+.scroll-top-btn {
+  height: 60px;
+  width: 60px;
+  border: none;
+  background-color: var(--light-mode-elem);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 5px 2px rgba(0, 0, 0, 0.1);
+
+  position: fixed;
+  bottom: 3%;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 99;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.75s;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .arrow {
+    font-size: 2.5rem;
+    animation: upDown 1.75s linear infinite;
+    color: var(--light-mode-text);
+  }
+}
+
+@keyframes upDown {
+  25% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
