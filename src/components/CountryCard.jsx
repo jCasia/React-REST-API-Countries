@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import styles from './styles/CountryCard.module.scss';
-import dummyImg from '../assets/soon-img.png';
 
 const CountryCard = ({ country }) => {
   const {
@@ -16,7 +15,7 @@ const CountryCard = ({ country }) => {
   });
 
   return (
-    <Link to='/details' className={styles.cards}>
+    <Link to={`/details/${countryName}`} className={styles.cards}>
       <div className={styles['card-container']}>
         <img src={countryImg} alt={alt} />
 

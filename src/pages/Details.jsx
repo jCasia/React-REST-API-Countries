@@ -1,57 +1,117 @@
 import styles from './styles/Details.module.scss';
-import dummyImg from '../assets/soon-img.png';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import BorderCountry from '../components/BorderCountry';
 import { BsArrowLeft } from 'react-icons/bs';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+
+const url = 'https://restcountries.com/v3.1/name/';
 
 const Details = () => {
+  const { id } = useParams();
+
+  const { data, isError, isLoading } = useQuery({
+    queryKey: ['country', id],
+
+    queryFn: async () => {
+      try {
+        const result = await axios.get(`${url}${id}`);
+        return result.data;
+      } catch (error) {
+        if (error.statusCode === 404) {
+          return [];
+        }
+      }
+    },
+  });
+
+  if (isLoading) {
+    return (
+      <section className={styles.wrapper}>
+        <h1>Loading....</h1>
+      </section>
+    );
+  }
+
+  if (isError) {
+    return (
+      <section className={styles.wrapper}>
+        <h1>Something went wrong....</h1>
+      </section>
+    );
+  }
+
+  const {
+    name: { common: countryName, nativeName },
+    flags: { svg: countryImg, alt },
+    population,
+    region,
+    subregion,
+    capital,
+    tld,
+    borders,
+    currencies,
+    languages,
+  } = data[0];
+
+  //Deeply nested, convert object into an array
+  const newCurrency = Object.values(currencies)[0].name;
+  const newNativeName = Object.values(nativeName)[0].common;
+  const newLanguage = Object.values(languages).join(', ');
+  //
+
+  const populationFixed = population.toLocaleString('en', {
+    useGrouping: true,
+  });
+
   return (
     <section className={styles.details}>
       <Link to='/' className={styles['back-btn']}>
         <BsArrowLeft />
         Back
       </Link>
-
       <div className={styles['details-card-container']}>
-        <div className={styles['img-wrapper']}>
-          <img src={dummyImg} alt='img' />
-        </div>
+        <img src={countryImg} alt={alt} />
+
         <div className={styles['details-wrapper']}>
-          <h1>Belgium</h1>
+          <h1>{countryName}</h1>
           <div className={styles['top-details']}>
             <p>
-              Native name: <span>Belgie</span>
+              Native name: <span>{newNativeName}</span>
             </p>
             <p>
-              Population: <span>Belgie</span>
+              Population: <span>{populationFixed}</span>
             </p>
             <p>
-              Region: <span>Belgie</span>
+              Region: <span>{region}</span>
             </p>
             <p>
-              Sub Region: <span>Belgie</span>
+              Sub Region: <span>{subregion}</span>
             </p>
             <p>
-              Capital: <span>Belgie</span>
+              Capital: <span>{capital}</span>
             </p>
           </div>
           <div className={styles['bottom-details']}>
             <p>
-              Top Level Domain: <span>Belgie</span>
+              Top Level Domain: <span>{tld}</span>
             </p>
             <p>
-              Currencies: <span>Belgie</span>
+              Currencies: <span>{newCurrency}</span>
             </p>
             <p>
-              Languages: <span>Belgie</span>
+              Language(s): <span>{newLanguage}</span>
             </p>
           </div>
           <div className={styles['border-countries-container']}>
             <h2>Border Countries:</h2>
             <div className={styles['border-countries']}>
-              <BorderCountry />
-              <BorderCountry />
-              <BorderCountry />
+              {/* check if borders exist */}
+              {borders?.map((border, index) => {
+                return <BorderCountry border={border} key={index} />;
+              }) ?? (
+                <p style={{ fontSize: '1.25rem' }}>No Bordering Countries</p>
+              )}
             </div>
           </div>
         </div>

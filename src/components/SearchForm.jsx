@@ -9,6 +9,12 @@ const SearchForm = () => {
   const searchbarHandler = (e) => {
     setSearchTerm(e.target.value);
   };
+
+  const enterHandler = (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+    }
+  };
   return (
     <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
       <div className={styles['searchbar-container']}>
@@ -18,6 +24,8 @@ const SearchForm = () => {
           onChange={searchbarHandler}
           name='searchbar'
           placeholder='Search for a country...'
+          onKeyDown={enterHandler}
+          autoComplete='off'
         />
       </div>
       <Dropdown />

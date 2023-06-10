@@ -1,6 +1,6 @@
 @use '../../styles/settings/media' as mediaQuery;
 
-.borderBtn {
+.borders {
   padding: 5px 20px;
   border: none;
   background-color: var(--light-mode-elem);
@@ -9,7 +9,8 @@
   border-radius: 5px;
   font-size: 1.2rem;
 
-  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 
   @include mediaQuery.responsive(small-tablet) {
     font-size: 1.75rem;

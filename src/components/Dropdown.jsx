@@ -10,14 +10,19 @@ const Dropdown = () => {
   const { setSelected, selected } = useGlobalContext();
 
   const selectHandler = (e) => {
-    setSelected(e.target.textContent);
+    const value = e.target.textContent;
+    setSelected(value);
+    // const filteredResultsRegion = fetchedData.filter(
+    //   (region) => region.region === value
+    // );
+    // setFetchedData(filteredResultsRegion);
     setIsDropdownOpen(false);
   };
 
   return (
     <div className={styles.dropdown}>
       <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} type='submit'>
-        {selected === '' ? 'Filter by Region' : `${selected}`}
+        {selected ? `${selected}` : 'Filter By Region'}
         <FiChevronDown
           className={
             isDropdownOpen ? `${styles.arrow} ${styles.active}` : styles.arrow

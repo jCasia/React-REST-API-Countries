@@ -19,6 +19,10 @@
     padding: 30px 60px;
   }
 
+  .homelinkh1 {
+    text-decoration: none;
+  }
+
   h1 {
     font-size: 1.75rem;
     color: var(--light-mode-text);
@@ -47,4 +51,7 @@
       font-size: 1.7rem;
     }
   }
+}
+.message {
+  font-size: 1.4rem;
 }

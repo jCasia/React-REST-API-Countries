@@ -1,11 +1,11 @@
 import styles from './styles/BorderCountry.module.scss';
 
 //need props
-const BorderCountry = () => {
+const BorderCountry = ({ border }) => {
   return (
-    <button type='button' className={styles.borderBtn}>
-      <p>France</p>
-    </button>
+    <div className={styles.borders}>
+      <p>{border}</p>
+    </div>
   );
 };
 

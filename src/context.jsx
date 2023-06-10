@@ -6,6 +6,7 @@ export const AppProvider = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const [selected, setSelected] = useState('');
   const [searchTerm, setSearchTerm] = useState('b');
+  const [fetchedData, setFetchedData] = useState([]);
 
   const darkThemeToggle = () => {
     setDarkTheme(!darkTheme);
@@ -22,6 +23,8 @@ export const AppProvider = ({ children }) => {
         setSelected,
         searchTerm,
         setSearchTerm,
+        fetchedData,
+        setFetchedData,
       }}
     >
       {children}
