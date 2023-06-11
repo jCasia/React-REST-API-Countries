@@ -1,13 +1,21 @@
 @use '../../styles/settings/media' as mediaQuery;
 
-.borders {
+.bordersBtn {
   padding: 5px 20px;
   border: none;
   background-color: var(--light-mode-elem);
   color: var(--light-mode-text);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
   font-size: 1.2rem;
+
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: #76868da4;
+  }
 
   display: flex;
   justify-content: center;

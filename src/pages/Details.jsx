@@ -13,7 +13,6 @@ const Details = () => {
 
   const { data, isError, isLoading } = useQuery({
     queryKey: ['country', id],
-
     queryFn: async () => {
       try {
         const result = await axios.get(`${url}${id}`);

@@ -3,7 +3,7 @@ import styles from './styles/CountryCard.module.scss';
 
 const CountryCard = ({ country }) => {
   const {
-    name: { common: countryName },
+    name: { common: countryName, official: officialName },
     flags: { svg: countryImg, alt },
     population,
     region,
@@ -15,7 +15,7 @@ const CountryCard = ({ country }) => {
   });
 
   return (
-    <Link to={`/details/${countryName}`} className={styles.cards}>
+    <Link to={`/details/${officialName}`} className={styles.cards}>
       <div className={styles['card-container']}>
         <img src={countryImg} alt={alt} />
 
