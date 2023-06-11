@@ -4,8 +4,8 @@ I really wanted to challenge myself and wanted to develop something that will he
 
 Note to anyone attempting this challenge: Optional chaining (<strong>?.</strong>) and Nullish coalescing operator (<strong>??</strong>) will be your best friend!
 
-Check out the link for this project: [https://jcasia-rest-countries-api.netlify.app/](https://jcasia-rest-countries-api.netlify.app/)
-Website of REST countries API :[https://restcountries.com/](https://restcountries.com/)
+- Check out the link for this project: [https://jcasia-rest-countries-api.netlify.app/](https://jcasia-rest-countries-api.netlify.app/)
+- Website of REST countries API :[https://restcountries.com/](https://restcountries.com/)
 
 ### I built this project using:
 
@@ -14,7 +14,7 @@ Website of REST countries API :[https://restcountries.com/](https://restcountrie
 - React Router
 - SASS
 
-### Here are some screenhot of the project:
+### Here are some screenshots of the project:
 
 ![](./src/images/sc1-desktop.png)
 ![](./src/images/sc2-desktop.png)
