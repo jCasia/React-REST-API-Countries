@@ -64,8 +64,6 @@ const Details = () => {
     useGrouping: true,
   });
 
-  console.log(alt ? alt : 'flag');
-
   return (
     <section className={styles.details}>
       <Link to='/' className={styles['back-btn']}>
