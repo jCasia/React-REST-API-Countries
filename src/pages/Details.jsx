@@ -64,6 +64,8 @@ const Details = () => {
     useGrouping: true,
   });
 
+  console.log(alt ? alt : 'flag');
+
   return (
     <section className={styles.details}>
       <Link to='/' className={styles['back-btn']}>
@@ -71,7 +73,7 @@ const Details = () => {
         Back
       </Link>
       <div className={styles['details-card-container']}>
-        <img src={countryImg} alt={alt} />
+        <img src={countryImg} alt={alt ? alt : `A flag of ${countryName}`} />
 
         <div className={styles['details-wrapper']}>
           <h1>{countryName}</h1>

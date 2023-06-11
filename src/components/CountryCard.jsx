@@ -14,10 +14,12 @@ const CountryCard = ({ country }) => {
     useGrouping: true,
   });
 
+  console.log(alt);
+
   return (
     <Link to={`/details/${officialName}`} className={styles.cards}>
       <div className={styles['card-container']}>
-        <img src={countryImg} alt={alt} />
+        <img src={countryImg} alt={alt ? alt : `A flag of ${countryName}`} />
 
         <div className={styles.wrapper}>
           <h2>{countryName}</h2>
