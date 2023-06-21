@@ -16,7 +16,4 @@ Note to anyone attempting this challenge: Optional chaining (<strong>?.</strong>
 
 ### Here are some screenshots of the project:
 
-![](./src/images/sc1-desktop.png)
-![](./src/images/sc2-desktop.png)
-![](./src/images/sc1-phone.png)
-![](./src/images/sc2-phone.png)
+![](./src/images/screenshot.png)
