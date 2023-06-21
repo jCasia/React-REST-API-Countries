@@ -64,7 +64,7 @@ const Dropdown = ({ elementRef }) => {
             : styles['options-list']
         }
       >
-        {options.map((item, index) => {
+        {options.sort().map((item, index) => {
           return (
             <li key={index} onClick={selectHandler} className={styles.option}>
               {item}

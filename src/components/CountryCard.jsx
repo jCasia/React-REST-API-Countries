@@ -29,7 +29,7 @@ const CountryCard = ({ country }) => {
               Region: <span>{region}</span>
             </p>
             <p>
-              Capital: <span>{capital}</span>
+              Capital: <span>{capital ? capital : 'N/A'}</span>
             </p>
           </div>
         </div>
