@@ -15,7 +15,7 @@ const Details = () => {
     queryKey: ['country', id],
     queryFn: async () => {
       try {
-        const result = await axios.get(`${url}${id}`);
+        const result = await axios.get(`${url}${id}?fullText=true`);
         return result.data;
       } catch (error) {
         if (error.statusCode === 404) {
@@ -55,9 +55,11 @@ const Details = () => {
   } = data[0];
 
   //Deeply nested, convert object into an array
-  const newCurrency = Object.values(currencies)[0].name;
-  const newNativeName = Object.values(nativeName)[0].common;
-  const newLanguage = Object.values(languages).join(', ');
+  const newCurrency = currencies ? Object.values(currencies)[0].name : 'N/A';
+  const newNativeName = nativeName
+    ? Object.values(nativeName)[0].common
+    : 'N/A';
+  const newLanguage = languages ? Object.values(languages).join(', ') : 'N/A';
   //
 
   const populationFixed = population.toLocaleString('en', {
@@ -86,10 +88,10 @@ const Details = () => {
               Region: <span>{region}</span>
             </p>
             <p>
-              Sub Region: <span>{subregion}</span>
+              Sub Region: <span>{subregion ? subregion : 'N/A'}</span>
             </p>
             <p>
-              Capital: <span>{capital}</span>
+              Capital: <span>{capital ? capital : 'N/A'}</span>
             </p>
           </div>
           <div className={styles['bottom-details']}>

@@ -33,7 +33,7 @@ const BorderCountry = ({ border }) => {
     <>
       {borders.map((border, index) => {
         const {
-          name: { official: borderCountryName },
+          name: { common: borderCountryName },
         } = border;
         return (
           <Link

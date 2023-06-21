@@ -5,7 +5,14 @@ import { useGlobalContext } from '../context';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-const options = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+const options = [
+  'Africa',
+  'Americas',
+  'Asia',
+  'Europe',
+  'Oceania',
+  'Antarctic',
+];
 
 const url = 'https://restcountries.com/v3.1/region/';
 

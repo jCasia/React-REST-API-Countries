@@ -13,7 +13,7 @@ const CountryCardContainer = () => {
 
   const { data, isLoading, isError } = useQuery({
     //caches results in string key (countries), only if value changes, then useQuery refetches the results
-    queryKey: ['countries', searchTerm || 'b'],
+    queryKey: ['countries', searchTerm || 'a'],
     queryFn: async () => {
       try {
         const result = await axios.get(`${url}${searchTerm}`);
@@ -49,9 +49,13 @@ const CountryCardContainer = () => {
 
   return (
     <div className={styles['cards-container']}>
-      {fetchedData.map((country) => {
-        return <CountryCard country={country} key={country.name.common} />;
-      })}
+      {fetchedData
+        .sort((a, b) => {
+          return a.name.common.localeCompare(b.name.common);
+        })
+        .map((country) => {
+          return <CountryCard country={country} key={country.name.common} />;
+        })}
     </div>
   );
 };
