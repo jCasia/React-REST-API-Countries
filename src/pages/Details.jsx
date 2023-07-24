@@ -1,5 +1,5 @@
 import styles from './styles/Details.module.scss';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import BorderCountry from '../components/BorderCountry';
 import { BsArrowLeft } from 'react-icons/bs';
 import { useQuery } from '@tanstack/react-query';
@@ -10,6 +10,7 @@ const url = 'https://restcountries.com/v3.1/name/';
 
 const Details = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const { data, isError, isLoading } = useQuery({
     queryKey: ['country', id],
@@ -40,7 +41,6 @@ const Details = () => {
       </section>
     );
   }
-
   const {
     name: { common: countryName, nativeName },
     flags: { svg: countryImg, alt },
@@ -68,7 +68,14 @@ const Details = () => {
 
   return (
     <section className={styles.details}>
-      <Link to='/' className={styles['back-btn']}>
+      <Link
+        to={'..'}
+        className={styles['back-btn']}
+        onClick={(e) => {
+          e.preventDefault;
+          navigate(-1);
+        }}
+      >
         <BsArrowLeft />
         Back
       </Link>
